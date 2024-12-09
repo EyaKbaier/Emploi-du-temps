@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Sessions</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Subject</th>
+          <th>Teacher</th>
+          <th>Room</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let session of sessions">
+          <td>{{ session.session_id }}</td>
+          <td>{{ session.subject_id }}</td>
+          <td>{{ session.teacher_id }}</td>
+          <td>{{ session.room_id }}</td>
+          <td>{{ session.session_date }}</td>
+          <td>{{ session.start_time }} - {{ session.end_time }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

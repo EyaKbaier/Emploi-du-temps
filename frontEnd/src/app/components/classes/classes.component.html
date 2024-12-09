@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Classes</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Students</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let classItem of classes">
+          <td>{{ classItem.class_id }}</td>
+          <td>{{ classItem.class_name }}</td>
+          <td>{{ classItem.subject_id }}</td>
+          <td>{{ classItem.students.join(', ') }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

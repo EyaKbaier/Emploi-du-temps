@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Rooms</h2>
+
+  <!-- Formulaire d'ajout -->
+  <form (ngSubmit)="addRoom()">
+    <input type="text" placeholder="Room ID" [(ngModel)]="newRoom.room_id" name="room_id" required />
+    <input type="text" placeholder="Room Name" [(ngModel)]="newRoom.room_name" name="room_name" required />
+    <input type="number" placeholder="Capacity" [(ngModel)]="newRoom.capacity" name="capacity" required />
+    <input type="text" placeholder="Building" [(ngModel)]="newRoom.building" name="building" required />
+    <input type="number" placeholder="Floor" [(ngModel)]="newRoom.floor" name="floor" required />
+    <button type="submit" class="btn btn-primary">Add Room</button>
+  </form>
+
+  <!-- Liste des salles -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Capacity</th>
+        <th>Building</th>
+        <th>Floor</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let room of rooms">
+        <td>{{ room.room_id }}</td>
+        <td>{{ room.room_name }}</td>
+        <td>{{ room.capacity }}</td>
+        <td>{{ room.building }}</td>
+        <td>{{ room.floor }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteRoom(room.room_id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
